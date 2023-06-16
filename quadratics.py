@@ -26,15 +26,33 @@ have = [
 
 operation = inquirer.prompt(task)
 bingus = inquirer.prompt(have)
-#print(answer["task"])
 
-#def factor():
+def factoredtostandard():
+    userpieces = input("How many parenthesized pieces are in your equation?: ")
+    try:
+        pieces = int(userpieces)
+    except ValueError:
+        print("Invalid value")
+        sleep(0.5)
+        factoredstostandard()
+    if pieces == 2:
+        print(":)")
+    elif pieces == 3:
+        print(":(")
+    else:
+        print("This amount is currently too great for this program. Hopefully this program will be updated in the future to support this kind of equation.")
+        sleep(10)
+        clr()
+        exit()
 
 
-if operation["task"] == "Convert to Factored Form" and bingus['have'] == "Factored Form":
+if operation["task"] == "Convert to Factored Form" and bingus["have"] == "Factored Form":
     print("Configured to factored form")
-elif answer["task"] == 'Convert to Standard Form':
+    sleep(0.5)
+    factoredtostandard()
+
+elif operation["task"] == 'Convert to Standard Form':
     print("Configured to standard form")
-elif answer["task"] == 'Simplify':
+elif operation["task"] == 'Simplify':
     print("Configured for simplification")
 

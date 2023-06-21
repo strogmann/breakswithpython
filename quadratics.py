@@ -27,6 +27,13 @@ have = [
 operation = inquirer.prompt(task)
 bingus = inquirer.prompt(have)
 
+def checkval(char):
+    if char in "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM":
+        multvar1 = char
+    elif char in "+-":
+        operate1 = char
+    
+
 def factoredtostandard():
     userpieces = input("How many parenthesized pieces are in your equation?: ")
     try:
@@ -36,12 +43,22 @@ def factoredtostandard():
         sleep(0.5)
         factoredstostandard()
     if pieces == 2:
-        print(":)")
+        part1 = input("What are the contents of the first parenthesized portion?")
+        if (")" in part1) or ("(" in part1):
+            print("Please exclude parentheses")
+            sleep(0.5)
+            factoredtostandard()
+        else:
+            for character in part1:
+                try:
+                    intpart1 = int(character)
+                except ValueError:
+                    checkval(character)
     elif pieces == 3:
         print(":(")
     else:
         print("This amount is currently too great for this program. Hopefully this program will be updated in the future to support this kind of equation.")
-        sleep(10)
+        sleep(6)
         clr()
         exit()
 
@@ -49,10 +66,13 @@ def factoredtostandard():
 if operation["task"] == "Convert to Factored Form" and bingus["have"] == "Factored Form":
     print("Configured to factored form")
     sleep(0.5)
-    factoredtostandard()
-
-elif operation["task"] == 'Convert to Standard Form':
+    print("There is nothing to do, closing program.")
+    sleep(1)
+    exit()
+elif operation["task"] == 'Convert to Standard Form' and bingus["have"] == "Factored Form":
     print("Configured to standard form")
+    sleep(0.5)
+    factoredtostandard()
 elif operation["task"] == 'Simplify':
     print("Configured for simplification")
 

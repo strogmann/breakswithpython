@@ -122,6 +122,33 @@ def factoredtostandard():
 
         print(part1_values)
         print(part2_values)
+
+        try:
+            numerical = int(part1_split[1]) * int(part2_split[1])
+            numericalstr = str(numerical)
+            if (part1_split[0] == 'x') and (part2_split[0] == 'x'):
+                variablemanip = 'x^2'
+
+            midnum = int(part1_split[1]) + int(part2_split[1])
+            midnumstr = str(midnum)
+
+            if midnum >= 0:
+                sign_mid = "+"
+            else:
+                sign_mid = ""
+
+            if numerical >= 0:
+                sign_numerical = "+"
+            else:
+                sign_numerical = ""
+
+            
+            print(variablemanip + sign_mid + midnumstr + "x" + sign_numerical + numericalstr)
+        except ValueError:
+            print("Invalid value")
+            sleep(0.5)
+            factoredtostandard()
+
     else:
         print(
             "This amount is currently too great for this program. Hopefully this program will be updated in the "

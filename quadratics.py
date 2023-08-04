@@ -128,6 +128,7 @@ def factoredtostandard():
             numericalstr = str(numerical)
             if (part1_split[0] == 'x') and (part2_split[0] == 'x'):
                 variablemanip = 'x^2'
+            
 
             midnum = int(part1_split[1]) + int(part2_split[1])
             midnumstr = str(midnum)

@@ -92,6 +92,7 @@ def split_parenthesized_piece(piece: str) -> list:
 
     return piece_split
 
+# Factored form to standard form FINISHED (sort of)
 
 def factoredtostandard():
     userpieces = input("How many parenthesized pieces are in your equation?: ")
@@ -157,6 +158,10 @@ def factoredtostandard():
         sleep(6)
         clr()
         exit()
+
+# standard form to factored form WIP
+#def standardtofactored
+   # userpieces2 = input("What is your standard form quadratic equation?")
 
 
 if operation["task"] == "Convert to Factored Form" and bingus["have"] == "Factored Form":

@@ -159,6 +159,10 @@ def factoredtostandard():
         clr()
         exit()
 
+def simplifyfromstandard():
+    equation = input("Please type in your equation now: ")
+    
+
 # standard form to factored form WIP
 #def standardtofactored
    # userpieces2 = input("What is your standard form quadratic equation?")
@@ -174,5 +178,8 @@ elif operation["task"] == 'Convert to Standard Form' and bingus["have"] == "Fact
     print("Configured to standard form")
     sleep(0.5)
     factoredtostandard()
-elif operation["task"] == 'Simplify':
-    print("Configured for simplification")
+elif operation["task"] == 'Simplify' and bingus["have"] == "Factored Form":
+    print("Configured for simplification from the standard form")
+    simplifyfromstandard()
+    sleep(0.5)
+    
